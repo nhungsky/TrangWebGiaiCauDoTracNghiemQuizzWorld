@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'quizz-world';
+
+  isHideAll = false;
+
+  constructor() {
+    var currentPath = window.location.href.replace(window.location.origin, "");
+    this.isHideAll = currentPath === '/login'
+  }
 }

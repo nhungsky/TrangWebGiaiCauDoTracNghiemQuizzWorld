@@ -1,6 +1,6 @@
 <!-- navbar-->
-<app-header></app-header>
-<div class="d-flex align-items-stretch">
+<app-header *ngIf="!isHideAll"></app-header>
+<div class="d-flex align-items-stretch" *ngIf="!isHideAll">
   <div id="sidebar" class="sidebar py-3">
     <app-sidebar></app-sidebar>
   </div>
@@ -12,4 +12,8 @@
       <app-footer></app-footer>
     </footer>
   </div>
+</div>
+
+<div *ngIf="isHideAll">
+  <router-outlet></router-outlet>
 </div>
